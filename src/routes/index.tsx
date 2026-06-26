@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import heroImg from "@/assets/hero.jpg";
 import noahImg from "@/assets/story-noah.jpg";
 import davidImg from "@/assets/story-david.jpg";
-import danielImg from "@/assets/story-daniel.jpg";
+import logoAsset from "@/assets/logo.jpg.asset.json";
 
 const PLAY_STORE_URL =
   "https://play.google.com/store/apps/details?id=com.biblia.bibliayawatoto";
@@ -65,9 +65,8 @@ function Landing() {
       <header className="sticky top-0 z-40 backdrop-blur-md bg-background/70 border-b border-border/60">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3">
           <a href="#top" className="flex items-center gap-2">
-            <span className="grid h-10 w-10 place-items-center rounded-2xl bg-gradient-primary text-primary-foreground shadow-card">
-              <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h11a4 4 0 0 1 4 4v12H8a4 4 0 0 1-4-4V4z"/><path d="M4 16a4 4 0 0 1 4-4h11"/></svg>
-            </span>
+            <img src={logoAsset.url} alt="Biblia ya Watoto logo" width={44} height={44} className="h-11 w-11 rounded-2xl object-cover shadow-card" />
+
             <span className="flex flex-col leading-tight">
               <span className="font-display text-[10px] tracking-[0.2em] text-muted-foreground">BIBLIA YA</span>
               <span className="font-display text-lg font-bold text-primary">WATOTO</span>
@@ -224,11 +223,10 @@ function Landing() {
             </a>
           </div>
 
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 grid gap-6 sm:grid-cols-2">
             {[
               { img: noahImg, t: "Safina ya Nuhu", b: "Mwanzo", color: "bg-primary text-primary-foreground" },
               { img: davidImg, t: "Daudi na Goliath", b: "1 Samweli", color: "bg-coral text-coral-foreground" },
-              { img: danielImg, t: "Daniel na Simba", b: "Danieli", color: "bg-grape text-grape-foreground" },
             ].map((s) => (
               <article key={s.t} className="overflow-hidden rounded-3xl bg-card shadow-card transition hover:-translate-y-1 hover:shadow-pop">
                 <div className="aspect-square overflow-hidden">
@@ -330,9 +328,8 @@ function Landing() {
       <footer className="border-t border-border bg-card">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-5 py-8 sm:flex-row">
           <div className="flex items-center gap-2">
-            <span className="grid h-8 w-8 place-items-center rounded-xl bg-gradient-primary text-primary-foreground">
-              <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h11a4 4 0 0 1 4 4v12H8a4 4 0 0 1-4-4V4z"/></svg>
-            </span>
+            <img src={logoAsset.url} alt="Biblia ya Watoto logo" width={32} height={32} className="h-8 w-8 rounded-xl object-cover" />
+
             <span className="font-display font-bold text-primary">Biblia ya Watoto</span>
           </div>
           <p className="text-sm text-muted-foreground">© {new Date().getFullYear()} Biblia ya Watoto. Imetengenezwa kwa upendo. ❤️</p>
