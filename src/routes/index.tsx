@@ -65,9 +65,8 @@ function Landing() {
       <header className="sticky top-0 z-40 backdrop-blur-md bg-background/70 border-b border-border/60">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3">
           <a href="#top" className="flex items-center gap-2">
-            <span className="grid h-10 w-10 place-items-center rounded-2xl bg-gradient-primary text-primary-foreground shadow-card">
-              <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h11a4 4 0 0 1 4 4v12H8a4 4 0 0 1-4-4V4z"/><path d="M4 16a4 4 0 0 1 4-4h11"/></svg>
-            </span>
+            <img src={logoAsset.url} alt="Biblia ya Watoto logo" width={44} height={44} className="h-11 w-11 rounded-2xl object-cover shadow-card" />
+
             <span className="flex flex-col leading-tight">
               <span className="font-display text-[10px] tracking-[0.2em] text-muted-foreground">BIBLIA YA</span>
               <span className="font-display text-lg font-bold text-primary">WATOTO</span>
