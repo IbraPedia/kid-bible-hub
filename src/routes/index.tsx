@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import heroImg from "@/assets/hero.jpg";
 import noahImg from "@/assets/story-noah.jpg";
 import davidImg from "@/assets/story-david.jpg";
-import danielImg from "@/assets/story-daniel.jpg";
+import logoAsset from "@/assets/logo.jpg.asset.json";
 
 const PLAY_STORE_URL =
   "https://play.google.com/store/apps/details?id=com.biblia.bibliayawatoto";
