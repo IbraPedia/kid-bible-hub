@@ -224,11 +224,10 @@ function Landing() {
             </a>
           </div>
 
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 grid gap-6 sm:grid-cols-2">
             {[
               { img: noahImg, t: "Safina ya Nuhu", b: "Mwanzo", color: "bg-primary text-primary-foreground" },
               { img: davidImg, t: "Daudi na Goliath", b: "1 Samweli", color: "bg-coral text-coral-foreground" },
-              { img: danielImg, t: "Daniel na Simba", b: "Danieli", color: "bg-grape text-grape-foreground" },
             ].map((s) => (
               <article key={s.t} className="overflow-hidden rounded-3xl bg-card shadow-card transition hover:-translate-y-1 hover:shadow-pop">
                 <div className="aspect-square overflow-hidden">
