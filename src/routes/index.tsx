@@ -328,9 +328,8 @@ function Landing() {
       <footer className="border-t border-border bg-card">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-5 py-8 sm:flex-row">
           <div className="flex items-center gap-2">
-            <span className="grid h-8 w-8 place-items-center rounded-xl bg-gradient-primary text-primary-foreground">
-              <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h11a4 4 0 0 1 4 4v12H8a4 4 0 0 1-4-4V4z"/></svg>
-            </span>
+            <img src={logoAsset.url} alt="Biblia ya Watoto logo" width={32} height={32} className="h-8 w-8 rounded-xl object-cover" />
+
             <span className="font-display font-bold text-primary">Biblia ya Watoto</span>
           </div>
           <p className="text-sm text-muted-foreground">© {new Date().getFullYear()} Biblia ya Watoto. Imetengenezwa kwa upendo. ❤️</p>
