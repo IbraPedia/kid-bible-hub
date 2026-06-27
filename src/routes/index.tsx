@@ -8,23 +8,32 @@ const PLAY_STORE_URL =
   "https://play.google.com/store/apps/details?id=com.biblia.bibliayawatoto";
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Biblia ya Watoto — Hadithi za Biblia kwa Watoto" },
-      {
-        name: "description",
-        content:
-          "Biblia ya Watoto ni programu rafiki kwa watoto kusoma na kusikiliza hadithi za Biblia kwa Kiswahili na Kiingereza. Pakua bure kutoka Google Play.",
-      },
-      { property: "og:title", content: "Biblia ya Watoto — Hadithi za Biblia kwa Watoto" },
-      {
-        property: "og:description",
-        content:
-          "Hadithi za Biblia zilizojaa picha nzuri, sauti, na maswali ya kufurahisha kwa watoto.",
-      },
-      { property: "og:type", content: "website" },
-    ],
-  }),
+  head: () => {
+    const title = "Biblia ya Watoto — Hadithi za Biblia kwa Watoto";
+    const description =
+      "Biblia ya Watoto ni programu rafiki kwa watoto kusoma na kusikiliza hadithi za Biblia kwa Kiswahili na Kiingereza. Pakua bure kutoka Google Play.";
+    const image = logoAsset.url;
+    return {
+      meta: [
+        { title },
+        { name: "description", content: description },
+        { property: "og:title", content: title },
+        { property: "og:description", content: description },
+        { property: "og:type", content: "website" },
+        { property: "og:url", content: "/" },
+        { property: "og:image", content: image },
+        { property: "og:image:alt", content: "Biblia ya Watoto logo" },
+        { property: "og:site_name", content: "Biblia ya Watoto" },
+        { property: "og:locale", content: "sw_TZ" },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: title },
+        { name: "twitter:description", content: description },
+        { name: "twitter:image", content: image },
+        { name: "twitter:image:alt", content: "Biblia ya Watoto logo" },
+      ],
+      links: [{ rel: "canonical", href: "/" }],
+    };
+  },
   component: Landing,
 });
 
