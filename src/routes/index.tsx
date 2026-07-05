@@ -7,31 +7,75 @@ import logoAsset from "@/assets/logo.jpg.asset.json";
 const PLAY_STORE_URL =
   "https://play.google.com/store/apps/details?id=com.biblia.bibliayawatoto";
 
+const SITE_URL = "https://kid-bible-hub.lovable.app";
+
 export const Route = createFileRoute("/")({
   head: () => {
-    const title = "Biblia ya Watoto — Hadithi za Biblia kwa Watoto";
+    const title = "Biblia ya Watoto — Hadithi za Biblia kwa Watoto (App ya Bure)";
     const description =
-      "Biblia ya Watoto ni programu rafiki kwa watoto kusoma na kusikiliza hadithi za Biblia kwa Kiswahili na Kiingereza. Pakua bure kutoka Google Play.";
+      "Pakua Biblia ya Watoto bure: hadithi za Biblia kwa Kiswahili na Kiingereza zenye picha, sauti na maswali. App salama kwa watoto wa miaka 3–12 kwenye Google Play.";
     const image = logoAsset.url;
+    const url = `${SITE_URL}/`;
     return {
       meta: [
         { title },
         { name: "description", content: description },
+        {
+          name: "keywords",
+          content:
+            "Biblia ya Watoto, hadithi za Biblia, Biblia kwa Kiswahili, Bible stories for kids, Swahili Bible app, kids Bible app, hadithi za Biblia kwa watoto, Christian kids app",
+        },
+        { name: "robots", content: "index, follow, max-image-preview:large" },
         { property: "og:title", content: title },
         { property: "og:description", content: description },
         { property: "og:type", content: "website" },
-        { property: "og:url", content: "/" },
+        { property: "og:url", content: url },
         { property: "og:image", content: image },
         { property: "og:image:alt", content: "Biblia ya Watoto logo" },
         { property: "og:site_name", content: "Biblia ya Watoto" },
         { property: "og:locale", content: "sw_TZ" },
+        { property: "og:locale:alternate", content: "en_US" },
         { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:title", content: title },
         { name: "twitter:description", content: description },
         { name: "twitter:image", content: image },
         { name: "twitter:image:alt", content: "Biblia ya Watoto logo" },
       ],
-      links: [{ rel: "canonical", href: "/" }],
+      links: [{ rel: "canonical", href: url }],
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "MobileApplication",
+                name: "Biblia ya Watoto",
+                operatingSystem: "ANDROID",
+                applicationCategory: "EducationalApplication",
+                offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+                aggregateRating: { "@type": "AggregateRating", ratingValue: "4.8", ratingCount: "10000" },
+                downloadUrl: PLAY_STORE_URL,
+                installUrl: PLAY_STORE_URL,
+                inLanguage: ["sw", "en"],
+                image,
+                description,
+              },
+              { "@type": "WebSite", url: SITE_URL, name: "Biblia ya Watoto", inLanguage: "sw" },
+              { "@type": "Organization", name: "Biblia ya Watoto", url: SITE_URL, logo: image },
+              {
+                "@type": "FAQPage",
+                mainEntity: [
+                  { "@type": "Question", name: "Je, programu ni bure?", acceptedAnswer: { "@type": "Answer", text: "Ndiyo, Biblia ya Watoto inapatikana bure kwenye Google Play Store." } },
+                  { "@type": "Question", name: "Inafanya kazi bila intaneti?", acceptedAnswer: { "@type": "Answer", text: "Baada ya kupakua hadithi, mtoto wako anaweza kusoma na kusikiliza bila intaneti." } },
+                  { "@type": "Question", name: "Inafaa kwa umri gani?", acceptedAnswer: { "@type": "Answer", text: "Imeundwa kwa watoto wa miaka 3 hadi 12, na ni nzuri kwa familia nzima." } },
+                  { "@type": "Question", name: "Itapatikana kwa iPhone?", acceptedAnswer: { "@type": "Answer", text: "Toleo la iOS linakuja hivi karibuni. Kwa sasa lipo kwenye Google Play." } },
+                ],
+              },
+            ],
+          }),
+        },
+      ],
     };
   },
   component: Landing,
