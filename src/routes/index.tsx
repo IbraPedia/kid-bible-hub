@@ -7,7 +7,7 @@ import logoAsset from "@/assets/logo.jpg.asset.json";
 const PLAY_STORE_URL =
   "https://play.google.com/store/apps/details?id=com.biblia.bibliayawatoto";
 
-const SITE_URL = "https://kid-bible-hub.lovable.app";
+const SITE_URL = "https://bibliayawatoto.com";
 
 export const Route = createFileRoute("/")({
   head: () => {
