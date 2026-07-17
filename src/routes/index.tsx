@@ -140,14 +140,23 @@ function Landing() {
               <a key={h} href={h} className="font-display text-sm font-semibold text-foreground/70 hover:text-primary transition-colors">{l}</a>
             ))}
           </nav>
-          <a
-            href={PLAY_STORE_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-full bg-coral px-4 py-2 text-sm font-bold text-coral-foreground shadow-card hover:brightness-110 transition"
-          >
-            Pakua
-          </a>
+          <div className="flex items-center gap-2">
+            <Link
+              to="/en"
+              className="hidden sm:inline-flex rounded-full border border-border px-3 py-1.5 text-xs font-bold text-foreground/70 hover:text-primary transition"
+              hrefLang="en"
+            >
+              EN
+            </Link>
+            <a
+              href={PLAY_STORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full bg-coral px-4 py-2 text-sm font-bold text-coral-foreground shadow-card hover:brightness-110 transition"
+            >
+              Pakua
+            </a>
+          </div>
         </div>
       </header>
 
