@@ -41,7 +41,12 @@ export const Route = createFileRoute("/")({
         { name: "twitter:image", content: image },
         { name: "twitter:image:alt", content: "Biblia ya Watoto logo" },
       ],
-      links: [{ rel: "canonical", href: url }],
+      links: [
+        { rel: "canonical", href: url },
+        { rel: "alternate", hrefLang: "sw", href: `${SITE_URL}/` },
+        { rel: "alternate", hrefLang: "en", href: `${SITE_URL}/en` },
+        { rel: "alternate", hrefLang: "x-default", href: `${SITE_URL}/` },
+      ],
       scripts: [
         {
           type: "application/ld+json",
