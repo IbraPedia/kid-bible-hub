@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import heroImg from "@/assets/hero.jpg";
 import noahImg from "@/assets/story-noah.jpg";
 import davidImg from "@/assets/story-david.jpg";
