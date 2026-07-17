@@ -342,6 +342,64 @@ function Landing() {
         </div>
       </section>
 
+      {/* Reviews */}
+      <section id="reviews" className="bg-accent/30 py-20">
+        <div className="mx-auto max-w-6xl px-5">
+          <div className="mx-auto max-w-2xl text-center">
+            <span className="font-display text-xs font-bold uppercase tracking-widest text-primary">Maoni ya Wazazi</span>
+            <h2 className="mt-2 font-display text-4xl md:text-5xl">Wazazi wanasema nini</h2>
+            <div className="mt-4 flex items-center justify-center gap-2 text-sunshine">
+              {Array.from({ length: 5 }).map((_, i) => (
+                <Sparkle key={i} className="h-5 w-5" />
+              ))}
+              <span className="ml-2 font-display text-sm font-bold text-foreground">4.8 / 5 — wazazi 10,000+</span>
+            </div>
+          </div>
+
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            {[
+              {
+                q: "Watoto wangu wanaomba kusoma kila jioni! Picha na sauti zinawavutia sana.",
+                n: "Neema M.",
+                r: "Mama wa watoto 3, Dar es Salaam",
+                c: "bg-sunshine text-sunshine-foreground",
+              },
+              {
+                q: "Ni salama kabisa — hakuna matangazo, na binti yangu anajifunza Kiingereza pia.",
+                n: "Joseph K.",
+                r: "Baba, Nairobi",
+                c: "bg-mint text-mint-foreground",
+              },
+              {
+                q: "Ninaipenda kwa sababu naweza kudhibiti muda wa kusoma. Ni zawadi kubwa!",
+                n: "Grace T.",
+                r: "Mama & Mwalimu, Mwanza",
+                c: "bg-coral text-coral-foreground",
+              },
+            ].map((r) => (
+              <figure key={r.n} className="rounded-3xl bg-card p-6 shadow-card transition hover:-translate-y-1 hover:shadow-pop">
+                <div className="flex text-sunshine">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <Sparkle key={i} className="h-4 w-4" />
+                  ))}
+                </div>
+                <blockquote className="mt-3 text-foreground">"{r.q}"</blockquote>
+                <figcaption className="mt-5 flex items-center gap-3">
+                  <span className={`grid h-11 w-11 place-items-center rounded-full font-display text-lg font-bold ${r.c}`}>
+                    {r.n.charAt(0)}
+                  </span>
+                  <span className="flex flex-col leading-tight">
+                    <span className="font-display font-bold text-foreground">{r.n}</span>
+                    <span className="text-xs text-muted-foreground">{r.r}</span>
+                  </span>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+      </section>
+
+
       {/* FAQ */}
       <section id="faq" className="mx-auto max-w-3xl px-5 pb-20">
         <h2 className="text-center font-display text-4xl md:text-5xl">Maswali ya Mara kwa Mara</h2>
