@@ -1,0 +1,15 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.biblia.bibliayawatoto",
+      "sha256_cert_fingerprints": [
+        "17:3B:6E:23:A1:02:40:BA:D0:B5:20:89:13:A6:AD:5A:1F:43:6E:27:AF:67:F9:73:92:AD:10:20:6B:23:9D:AC"
+      ]
+    }
+  }
+]
